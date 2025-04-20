@@ -3,7 +3,6 @@
 if (! function_exists('money_format')) {
     function money_format($number, $showZeros = true, $decimals = 2, $showCurrency = true)
     {
-        return 'hola';
         if (app()->getLocale() == 'es') {
             $decimalSeparator = ',';
             $thousandSeparator = '.';
