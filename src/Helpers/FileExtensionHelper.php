@@ -8,11 +8,6 @@
 if (!function_exists('getFileExtension')) {
     function getFileExtension($filePath)
     {
-        // Check if the file exists
-        if (!file_exists($filePath)) {
-            return null; // or throw an exception
-        }
-
         // Use pathinfo to get the file extension
         $extension = pathinfo($filePath, PATHINFO_EXTENSION);
 
