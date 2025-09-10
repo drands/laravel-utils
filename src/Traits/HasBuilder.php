@@ -17,7 +17,7 @@ trait HasBuilder {
                 if ($model->isDirty($builder)) {
                     //if field is translatable
                     if (in_array($builder, $model->translatable)) {
-                        $oldContentAll = $model->getOriginal($builder);
+                        $oldContentAll = $model->getOriginal($builder) ?? [];
                         foreach ($oldContentAll as $locale => $oldContent) {
                             $newContent = $model->getTranslation($builder, $locale);
                             $model->deleteOldFiles($oldContent, $newContent);
