@@ -33,15 +33,15 @@ class CloneTranslations extends Action
 
         //$this->requiresConfirmation();
 
-        $this->label(__('filament-actions::cloneTranslations.single.label'));
+        $this->label(__('laravel-utils::clone-translations.label'));
 
-        $this->modalHeading(fn(): string => __('filament-actions::cloneTranslations.single.modal.heading', ['label' => $this->getRecordTitle()]));
+        $this->modalHeading(fn(): string => __('laravel-utils::clone-translations.modal.heading', ['label' => $this->getRecordTitle()]));
         
-        $this->modalDescription(__('filament-actions::cloneTranslations.single.modal.description'));
+        $this->modalDescription(__('laravel-utils::clone-translations.modal.description'));
 
-        $this->modalSubmitActionLabel(__('filament-actions::cloneTranslations.single.modal.actions.clone.label'));
+        $this->modalSubmitActionLabel(__('laravel-utils::clone-translations.modal.actions.clone.label'));
 
-        $this->successNotificationTitle(__('filament-actions::cloneTranslations.single.notifications.cloned.title'));
+        $this->successNotificationTitle(__('laravel-utils::clone-translations.notifications.cloned.title'));
 
         $this->defaultColor('warning');
 
@@ -79,17 +79,17 @@ class CloneTranslations extends Action
 
         $this->form([
             Forms\Components\Select::make('fromLocale')
-                ->label(__('filament-actions::cloneTranslations.single.form.fromLocale.label'))
+                ->label(__('laravel-utils::clone-translations.form.fromLocale.label'))
                 ->options($allLocales)
                 ->required(),
             Forms\Components\Select::make('toLocales')
                 ->multiple()
-                ->label(__('filament-actions::cloneTranslations.single.form.toLocales.label'))
+                ->label(__('laravel-utils::clone-translations.form.toLocales.label'))
                 ->options($allLocales)
                 ->required(),
             Forms\Components\Select::make('fields')
                 ->multiple()
-                ->label(__('filament-actions::cloneTranslations.single.form.fields.label'))
+                ->label(__('laravel-utils::clone-translations.form.fields.label'))
                 ->options(array_combine($translatableFields, $translatableFields))
                 ->required(),
         ]);
